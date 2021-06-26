@@ -11,19 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.spark;
+package com.facebook.presto.resourcemanager;
 
-import com.facebook.presto.testing.QueryRunner;
-import com.facebook.presto.tests.AbstractTestWindowQueries;
+import com.facebook.presto.execution.resourceGroups.ResourceGroupRuntimeInfo;
+import com.google.common.collect.ImmutableList;
 
-import static com.facebook.presto.spark.PrestoSparkQueryRunner.createHivePrestoSparkQueryRunner;
+import java.util.List;
 
-public class TestPrestoSparkAbstractTestWindowQueries
-        extends AbstractTestWindowQueries
+public class NoopResourceGroupService
+        implements ResourceGroupService
 {
     @Override
-    protected QueryRunner createQueryRunner()
+    public List<ResourceGroupRuntimeInfo> getResourceGroupInfo()
     {
-        return createHivePrestoSparkQueryRunner();
+        return ImmutableList.of();
     }
 }

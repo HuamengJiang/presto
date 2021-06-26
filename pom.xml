@@ -10,7 +10,7 @@
 
     <groupId>com.facebook.presto</groupId>
     <artifactId>presto-root</artifactId>
-    <version>0.256-SNAPSHOT</version>
+    <version>0.257-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>presto-root</name>
@@ -169,7 +169,7 @@
         <module>presto-common</module>
         <module>presto-thrift-testing-udf-server</module>
         <module>presto-thrift-spec</module>
-        <module>testing/presto-testng-services</module>
+        <module>presto-testng-services</module>
     </modules>
 
     <dependencyManagement>

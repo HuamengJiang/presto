@@ -11,19 +11,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.spark;
+package com.facebook.presto.resourcemanager;
 
-import com.facebook.presto.testing.QueryRunner;
-import com.facebook.presto.tests.AbstractTestOrderByQueries;
+import com.facebook.presto.execution.resourceGroups.ResourceGroupRuntimeInfo;
 
-import static com.facebook.presto.spark.PrestoSparkQueryRunner.createHivePrestoSparkQueryRunner;
+import java.util.List;
 
-public class TestPrestoSparkAbstractTestOrderByQueries
-        extends AbstractTestOrderByQueries
+public interface ResourceGroupService
 {
-    @Override
-    protected QueryRunner createQueryRunner()
-    {
-        return createHivePrestoSparkQueryRunner();
-    }
+    List<ResourceGroupRuntimeInfo> getResourceGroupInfo()
+            throws ResourceManagerInconsistentException;
 }
